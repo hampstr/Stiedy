@@ -3,39 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="\style.css">
+
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+    
     <title>Stiedy</title>
 </head>
 <body>
-
-    <div id="titleWrapper">
-        <h1>
-            STIEDY
-        </h1>
-        
+    <div id="scoreWrapper">
+        <h1 id="percent"></h1>
+        <h2 id="correct"></h2>
+        <button id="redo" class = "blueButton" onclick="location.href='quiz.html'" style="margin-bottom: 100px;">Redo?</button>
+        <button id="home" class = "blueButton" onclick="location.href='/index.html'">Back to home page</button>
     </div>
-
-    <hr />
-
-    <div id="entryWrapper">
-        <label for="quizCode">
-            Paste in the quiz code below...
-        </label>
-
-        <textarea name="quizCode" id="quizCode"></textarea>
-    </div>
-
-    <div id="runWrapper">
-        <button id="run" class="blueButton">
-            Generate and do quiz
-        </button>
-    </div>
-
-    <script src='index.js'></script>
+    <script src='ended.js'></script>
 </body>
 </html>
