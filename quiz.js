@@ -5,6 +5,7 @@ let correct = 0
 let questionCount = 0
 let newQuestionIndecies = []
 
+let overview = {}
 
 // QUESTION FORMAT 
 
@@ -36,6 +37,10 @@ for (let i = 0; i < quizCode.length; i++) {
 
 document.getElementById("questionCount").innerHTML = questionCount
 
+
+
+
+
 function updateQuestion() {
     document.getElementById("questionNumber").innerHTML = question
     
@@ -60,6 +65,8 @@ function updateQuestion() {
     
     currentQuestion["choices"] = shuffleArray(currentQuestion["choices"])
 
+    
+
     let answersWrapper = document.getElementById("answersWrapper")
     answersWrapper.innerHTML = ""
     
@@ -77,6 +84,13 @@ function updateQuestion() {
                 correct++
             } 
             question++
+            
+            overview[String(question-1)] = [
+                currentQuestion["question"],
+                currentQuestion["answer"],
+                answerButton.innerHTML
+            ]
+            console.log(overview)
             updateQuestion()
         })
         
@@ -95,6 +109,7 @@ function quizEnded() {
     localStorage.setItem("percent", percent)
     localStorage.setItem("correct", correct)
     localStorage.setItem("questionCount", questionCount)
+    localStorage.setItem("overview", JSON.stringify(overview))
     location.href = "ended.html"
 }
 

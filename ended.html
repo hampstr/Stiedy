@@ -12,12 +12,29 @@
     
     <title>Stiedy</title>
 </head>
-<body>
+<body style="padding: 20px;">
     <div id="scoreWrapper">
         <h1 id="percent"></h1>
         <h2 id="correct"></h2>
         <button id="redo" class = "blueButton" onclick="location.href='quiz.html'" style="margin-bottom: 100px;">Redo?</button>
         <button id="home" class = "blueButton" onclick="location.href='index.html'">Back to home page</button>
+        <hr />
+    </div>
+
+    <div id="overviewParentWrapper">
+        <div id="overviewWrapper">
+            <h1 id="overview">Quiz Overview</h1>
+            <div id="overviewTableWrapper">
+                <table id="overviewTable">
+                    <tr>
+                        <th>Question #</th>
+                        <th>Question</th>
+                        <th>Correct Answer</th>
+                        <th>Your answer</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
     <script src='ended.js'></script>
 </body>
