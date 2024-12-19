@@ -16,6 +16,16 @@ let newQuestionIndecies = []
 // 4
 // 5
 
+//TODO: SHOW WHICH QUESTIONS YOU GOT WRONG
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+    return array;
+}
+
 
 for (let i = 0; i < quizCode.length; i++) {
     if (quizCode[i] == "@") {
@@ -38,8 +48,7 @@ function updateQuestion() {
             }
         }
         else {
-            currentQuestionCode.push(quizCode[i])
-            
+            currentQuestionCode.push(quizCode[i])  
         }
     }
     
@@ -49,6 +58,8 @@ function updateQuestion() {
         "choices" : currentQuestionCode.slice(2, currentQuestionCode.length)
     }
     
+    currentQuestion["choices"] = shuffleArray(currentQuestion["choices"])
+
     let answersWrapper = document.getElementById("answersWrapper")
     answersWrapper.innerHTML = ""
     
@@ -65,7 +76,6 @@ function updateQuestion() {
             if (answerButton.innerHTML == currentQuestion["answer"]) {
                 correct++
             } 
-            
             question++
             updateQuestion()
         })
